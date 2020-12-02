@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="32"
-  DTS:VersionGUID="{410AF7F0-1FA3-4B12-BDCC-771F716C7827}">
+  DTS:VersionBuild="33"
+  DTS:VersionGUID="{9FD05AA6-C4CB-4023-9528-2925D31DD4DB}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -172,7 +172,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[Customers]</property>
+                  name="OpenRowset">[dbo].[Customers]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -347,7 +347,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[Customers]</property>
+                  name="OpenRowset">[dbo].[Customers_FollowUp]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -478,6 +478,12 @@
                       refId="Package\Data Flow Task\Customers_FollowUp.Inputs[OLE DB Destination Input].ExternalColumns[CustomerSK]"
                       dataType="i4"
                       name="CustomerSK" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Customers_FollowUp.Inputs[OLE DB Destination Input].ExternalColumns[Suffix]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Suffix" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -1127,29 +1133,29 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="151.2,41.6"
-          Id="Package\Data Flow Task\Flat File Source"
-          TopLeft="29.1666655076875,26.8666668801838" />
+          Size="160,41.6"
+          Id="Package\Data Flow Task\Suffix vs NoSuffix"
+          TopLeft="469.999981323879,125.666667665376" />
         <NodeLayout
           Size="177.6,41.6"
           Id="Package\Data Flow Task\Customers_FollowUp"
           TopLeft="279.166655573581,283.400002252261" />
         <NodeLayout
-          Size="160,41.6"
-          Id="Package\Data Flow Task\Suffix vs NoSuffix"
-          TopLeft="469.999981323879,125.666667665376" />
-        <NodeLayout
           Size="223.2,41.6"
           Id="Package\Data Flow Task\Title and Middle Name Replace"
           TopLeft="264.999989469846,31.2000002479553" />
         <NodeLayout
-          Size="128.8,41.6"
-          Id="Package\Data Flow Task\Customers"
-          TopLeft="671.666639977032,287.733335620032" />
+          Size="151.2,41.6"
+          Id="Package\Data Flow Task\Flat File Source"
+          TopLeft="29.1666655076875,26.8666668801838" />
         <NodeLayout
           Size="125.6,41.6"
           Id="Package\Data Flow Task\Full Name"
           TopLeft="554.166644646063,24.2666668595207" />
+        <NodeLayout
+          Size="128.8,41.6"
+          Id="Package\Data Flow Task\Customers"
+          TopLeft="671.666639977032,287.733335620032" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Suffix]"
           TopLeft="524.666647990546,167.266667665376">
@@ -1182,7 +1188,7 @@
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-91.5131798022323,52.1432348322998,26.3263671875,9.7978515625"
+              BoundingBox="-91.5131798022325,52.1432348322998,26.3263671875,9.7978515625"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -1218,7 +1224,7 @@
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="61.3341431286598,53.9023107538702,38.0650390625,9.7978515625"
+              BoundingBox="61.33414312866,53.9023107538702,38.0650390625,9.7978515625"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
